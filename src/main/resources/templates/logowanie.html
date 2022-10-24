@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Szablon</title>
+  <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="logo">
+    <img th:src="@{css/images/logo.png}" />
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="/" class="active">Strona główna</a></li>
+      <li><a href="/Siema">Siema</a></li>
+    </ul>
+  </div>
+  <div id="header">
+
+    <img th:src="@{css/images/bg_head.jpg}" style="float: right" />
+    <div id="title_head">
+      <h2>Kalkulator Kredytowy</h2>
+
+      <form action="Signin" method="POST">
+        <p>Login:<input type="text" name="Login"></input></p>
+        <p>Hasło:<input type="password" name="Password"></input></p>
+        <p><button>Zaloguj</button></p>
+      </form>
+      <p th:text="${Message}"></p>
+
+    </div>
+  </div>
+  <div id="solid">
+    <div id="solid_box" class="margin3">
+      <img th:src="@{css/images/icon_plus.jpg}" align="left" />
+      <h2>Lorem ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac erat eget urna faucibus pellentesque sit amet eget metus.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac erat eget urna faucibus pellentesque sit amet eget metus.</p> <br />
+      <a href="#">Lorem ipsum</a>
+    </div>
+    <div id="solid_box" class="margin2">
+      <img th:src="@{css/images/icon_web.jpg}" align="left" />
+      <h2>Lorem ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac erat eget urna faucibus pellentesque sit amet eget metus.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac erat eget urna faucibus pellentesque sit amet eget metus.</p><br />
+      <a href="#">Lorem ipsum</a>
+    </div>
+    <div id="solid_box" class="margin2">
+      <img th:src="@{css/images/icon_secure.jpg}" align="left" />
+      <h2>Lorem ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac erat eget urna faucibus pellentesque sit amet eget metus.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac erat eget urna faucibus pellentesque sit amet eget metus.</p><br />
+      <a href="#">Lorem ipsum</a>
+    </div>
+  </div>
+  <div id="footer">
+    <p>&copy Wszelkie prawa zastrzeżone. <br /> Projekt: <a href="http://www.templatki.net">Darmowe Szablony Stron</a></p>
+  </div>
+</body>
+</html>

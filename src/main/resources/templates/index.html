@@ -16,6 +16,7 @@
         <ul>
         <li><a href="/" class="active">Strona główna</a></li>
         <li><a href="/Siema">Siema</a></li>
+            <li><a href="Logout">Jesteś zalogowany jako:<b th:text="${Loginn}"></b></a></li>
         </ul>
     </div>
     <div id="header">
@@ -28,12 +29,11 @@
             <p>Procent:<input type="number" name="Procent" min="0" max="100" th:value="${liczba2}"></input>%</p>
             <p>Lata:<input type="number" name="Lata" min="0" max="25" th:value="${liczba3}"></input>Lat</p>
             <p><button>Oblicz</button></p>
-
             <p th:text="${suma}"></p>
             <p th:text="${wynik}"></p>
             <p th:text="${miesiace}"></p>
         </form>
-    </div>    
+    </div>
     </div>
     <div id="solid">
     <div id="solid_box" class="margin3">

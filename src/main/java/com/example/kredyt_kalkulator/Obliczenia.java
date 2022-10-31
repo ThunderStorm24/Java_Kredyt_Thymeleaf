@@ -1,12 +1,19 @@
 package com.example.kredyt_kalkulator;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.context.ApplicationContext;
+
 
 @org.springframework.stereotype.Controller
 public class Obliczenia {
 
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     @PostMapping("/Oblicz")
     public String Oblicz(@RequestParam(value="Kwota",defaultValue="1000") double Kwota, @RequestParam(value="Procent",defaultValue="0") double Procent, @RequestParam(value="Lata",defaultValue="1") int Lata, Model mod) {
@@ -40,8 +47,10 @@ public class Obliczenia {
             mod.addAttribute("wynik","Rata co miesiąc: " + wynik/100 + " zł");
             mod.addAttribute("miesiace"," przez " + miesiace + " miesiecy");
 
+        String query="INSERT INTO wyniki(Wynik,Raty,Czas) values(?,?,?)";
+        jdbcTemplate.update(query,suma/100,wynik/100,miesiace);
+
         return "index";
     }
-
 
 }

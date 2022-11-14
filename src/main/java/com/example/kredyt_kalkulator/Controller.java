@@ -39,7 +39,7 @@ public class Controller {
     @Autowired
     JdbcTemplate jdbcTemplate;
     @PostMapping("/Signin")
-    public String Signin(HttpSession httpSession, @RequestParam(value = "Login") String Login, @RequestParam(value = "Password") String Password, Model mod) {
+    public String Signin(HttpSession httpSession, @RequestParam(value = "Login", defaultValue="Visitor") String Login, @RequestParam(value = "Password", defaultValue="Visitor") String Password, Model mod) {
         mod.addAttribute("Loginn", Login);
         mod.addAttribute("Passwordd", Password);
         mod.addAttribute("Message", "Błędny login lub hasło!!!");
